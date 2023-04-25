@@ -106,4 +106,14 @@ const div=`
         </table>
     </google-sheets-html-origin>
 `
-document.currentScript.insertAdjacentHTML('beforebegin', div)
+var current = (function() {
+    if (document.currentScript) {
+        return document.currentScript.insertAdjacentHTML('beforebegin', div);
+    } else {
+        var scripts = document.getElementsByTagName('script'),
+        script = scripts[scripts.length-1];
+        if (script.getAttribute.length !== undefined) {
+            return document.script.insertAdjacentHTML('beforebegin', div);
+        }
+    }
+})();
