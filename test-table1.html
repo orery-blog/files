@@ -112,8 +112,6 @@ var current = (function() {
     } else {
         var scripts = document.getElementsByTagName('script'),
         script = scripts[scripts.length-1];
-        if (script.getAttribute.length !== undefined) {
-            return document.script.insertAdjacentHTML('beforebegin', div);
-        }
+        return document.script.insertAdjacentHTML('beforebegin', div);
     }
 })();
